@@ -1,0 +1,23 @@
+[2026-10-26T01:18:04.772Z] [servico-coordenador] Serviço iniciado na porta 3000
+[2026-10-26T01:18:07.809Z] [servico-coordenador] Recebido pedido de lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z (dono req-12e0413b)
+[2026-10-26T01:18:07.809Z] [servico-coordenador] Lock concedido para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+[2026-10-26T01:18:07.814Z] [servico-coordenador] Recebido pedido de lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z (dono req-e0ab184a)
+[2026-10-26T01:18:07.814Z] [servico-coordenador] Recurso Hubble-Acad_2025-12-01T03:00:00Z já em uso, negando lock
+[2026-10-26T01:18:07.820Z] [servico-coordenador] Recebido pedido de lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z (dono req-e018d95b)
+[2026-10-26T01:18:07.821Z] [servico-coordenador] Recurso Hubble-Acad_2025-12-01T03:00:00Z já em uso, negando lock
+[2026-10-26T01:18:07.825Z] [servico-coordenador] Recebido pedido de lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z (dono req-dae6bb97)
+[2026-10-26T01:18:07.825Z] [servico-coordenador] Recurso Hubble-Acad_2025-12-01T03:00:00Z já em uso, negando lock
+[2026-10-26T01:18:07.828Z] [servico-coordenador] Recebido pedido de lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z (dono req-5c918b8d)
+[2026-10-26T01:18:07.828Z] [servico-coordenador] Recurso Hubble-Acad_2025-12-01T03:00:00Z já em uso, negando lock
+[2026-10-26T01:18:07.831Z] [servico-coordenador] Recebido pedido de lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z (dono req-8475634e)
+[2026-10-26T01:18:07.831Z] [servico-coordenador] Recurso Hubble-Acad_2025-12-01T03:00:00Z já em uso, negando lock
+[2026-10-26T01:18:07.832Z] [servico-coordenador] Recebido pedido de lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z (dono req-2577fd3b)
+[2026-10-26T01:18:07.832Z] [servico-coordenador] Recurso Hubble-Acad_2025-12-01T03:00:00Z já em uso, negando lock
+[2026-10-26T01:18:07.833Z] [servico-coordenador] Recebido pedido de lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z (dono req-512636c0)
+[2026-10-26T01:18:07.833Z] [servico-coordenador] Recurso Hubble-Acad_2025-12-01T03:00:00Z já em uso, negando lock
+[2026-10-26T01:18:07.834Z] [servico-coordenador] Recebido pedido de lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z (dono req-502a587c)
+[2026-10-26T01:18:07.834Z] [servico-coordenador] Recurso Hubble-Acad_2025-12-01T03:00:00Z já em uso, negando lock
+[2026-10-26T01:18:07.838Z] [servico-coordenador] Recebido pedido de lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z (dono req-5a70a5b8)
+[2026-10-26T01:18:07.838Z] [servico-coordenador] Recurso Hubble-Acad_2025-12-01T03:00:00Z já em uso, negando lock
+[2026-10-26T01:18:08.032Z] [servico-coordenador] Recebido pedido de unlock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+[2026-10-26T01:18:08.032Z] [servico-coordenador] Lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z liberado

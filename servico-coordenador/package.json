@@ -1,0 +1,12 @@
+{
+  "name": "servico-coordenador",
+  "version": "1.0.0",
+  "description": "Serviço de lock (exclusão mútua) do SCTEC",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

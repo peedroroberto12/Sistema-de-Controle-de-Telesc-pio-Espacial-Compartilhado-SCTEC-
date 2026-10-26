@@ -1,0 +1,36 @@
+INFO:2026-10-26T01:18:05.087Z:servico-agendamento:Conexão com o banco de dados estabelecida
+INFO:2026-10-26T01:18:05.087Z:servico-agendamento:Serviço iniciado na porta 5000
+INFO:2026-10-26T01:18:07.784Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:18:07.785Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+INFO:2026-10-26T01:18:07.786Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:18:07.788Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+INFO:2026-10-26T01:18:07.789Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:18:07.791Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+INFO:2026-10-26T01:18:07.792Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:18:07.792Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+INFO:2026-10-26T01:18:07.802Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:18:07.802Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+INFO:2026-10-26T01:18:07.804Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:18:07.804Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+INFO:2026-10-26T01:18:07.809Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:18:07.810Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+INFO:2026-10-26T01:18:07.812Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:18:07.812Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+INFO:2026-10-26T01:18:07.814Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:18:07.814Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+INFO:2026-10-26T01:18:07.815Z:servico-agendamento:Lock adquirido com sucesso para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+WARNING:2026-10-26T01:18:07.816Z:servico-agendamento:Falha ao adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z, recurso ocupado
+INFO:2026-10-26T01:18:07.816Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:18:07.821Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:18:07.821Z:servico-agendamento:Tentando adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z
+WARNING:2026-10-26T01:18:07.823Z:servico-agendamento:Falha ao adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z, recurso ocupado
+WARNING:2026-10-26T01:18:07.826Z:servico-agendamento:Falha ao adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z, recurso ocupado
+WARNING:2026-10-26T01:18:07.829Z:servico-agendamento:Falha ao adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z, recurso ocupado
+WARNING:2026-10-26T01:18:07.831Z:servico-agendamento:Falha ao adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z, recurso ocupado
+WARNING:2026-10-26T01:18:07.834Z:servico-agendamento:Falha ao adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z, recurso ocupado
+WARNING:2026-10-26T01:18:07.835Z:servico-agendamento:Falha ao adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z, recurso ocupado
+WARNING:2026-10-26T01:18:07.837Z:servico-agendamento:Falha ao adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z, recurso ocupado
+WARNING:2026-10-26T01:18:07.838Z:servico-agendamento:Falha ao adquirir lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z, recurso ocupado
+INFO:2026-10-26T01:18:08.022Z:servico-agendamento:Salvando novo agendamento no BD
+AUDIT:2026-10-26T01:18:08.030Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:18:08.030Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 1, "cientista_id": 2, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:18:07.765Z", "request_id": "req-12e0413b"}}
+INFO:2026-10-26T01:18:08.030Z:servico-agendamento:Liberando lock para o recurso Hubble-Acad_2025-12-01T03:00:00Z

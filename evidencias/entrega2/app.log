@@ -1,0 +1,42 @@
+INFO:2026-10-26T01:29:03.365Z:servico-agendamento:Conexão com o banco de dados estabelecida
+INFO:2026-10-26T01:29:03.365Z:servico-agendamento:Serviço iniciado na porta 5000
+INFO:2026-10-26T01:29:56.276Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:29:56.278Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:29:56.279Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:29:56.279Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:29:56.278Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:29:56.281Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:29:56.290Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:29:56.291Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:29:56.289Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:29:56.291Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:29:56.292Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:29:56.292Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:29:56.293Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:29:56.294Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:29:56.294Z:servico-agendamento:Requisição recebida para POST /agendamentos (recurso Hubble-Acad_2025-12-01T03:00:00Z)
+INFO:2026-10-26T01:29:56.294Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:29:56.295Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:29:56.296Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:29:56.296Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:29:56.296Z:servico-agendamento:Iniciando verificação de conflito no BD
+INFO:2026-10-26T01:29:56.490Z:servico-agendamento:Salvando novo agendamento no BD
+INFO:2026-10-26T01:29:56.494Z:servico-agendamento:Salvando novo agendamento no BD
+INFO:2026-10-26T01:29:56.495Z:servico-agendamento:Salvando novo agendamento no BD
+INFO:2026-10-26T01:29:56.496Z:servico-agendamento:Salvando novo agendamento no BD
+INFO:2026-10-26T01:29:56.497Z:servico-agendamento:Salvando novo agendamento no BD
+INFO:2026-10-26T01:29:56.498Z:servico-agendamento:Salvando novo agendamento no BD
+INFO:2026-10-26T01:29:56.501Z:servico-agendamento:Salvando novo agendamento no BD
+INFO:2026-10-26T01:29:56.501Z:servico-agendamento:Salvando novo agendamento no BD
+INFO:2026-10-26T01:29:56.502Z:servico-agendamento:Salvando novo agendamento no BD
+INFO:2026-10-26T01:29:56.503Z:servico-agendamento:Salvando novo agendamento no BD
+AUDIT:2026-10-26T01:29:56.515Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:29:56.515Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 1, "cientista_id": 8, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:29:56.258Z"}}
+AUDIT:2026-10-26T01:29:56.523Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:29:56.523Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 2, "cientista_id": 1, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:29:56.257Z"}}
+AUDIT:2026-10-26T01:29:56.538Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:29:56.538Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 3, "cientista_id": 4, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:29:56.257Z"}}
+AUDIT:2026-10-26T01:29:56.552Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:29:56.552Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 4, "cientista_id": 10, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:29:56.259Z"}}
+AUDIT:2026-10-26T01:29:56.560Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:29:56.560Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 5, "cientista_id": 5, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:29:56.258Z"}}
+AUDIT:2026-10-26T01:29:56.567Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:29:56.567Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 6, "cientista_id": 3, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:29:56.257Z"}}
+AUDIT:2026-10-26T01:29:56.590Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:29:56.590Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 7, "cientista_id": 2, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:29:56.257Z"}}
+AUDIT:2026-10-26T01:29:56.617Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:29:56.617Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 8, "cientista_id": 6, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:29:56.258Z"}}
+AUDIT:2026-10-26T01:29:56.635Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:29:56.635Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 9, "cientista_id": 7, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:29:56.258Z"}}
+AUDIT:2026-10-26T01:29:56.642Z:servico-agendamento:{"timestamp_utc": "2026-10-26T01:29:56.642Z", "level": "AUDIT", "event_type": "AGENDAMENTO_CRIADO", "service": "servico-agendamento", "details": {"agendamento_id": 10, "cientista_id": 9, "horario_inicio_utc": "2025-12-01T03:00:00Z", "timestamp_requisicao": "2026-10-26T01:29:56.258Z"}}
