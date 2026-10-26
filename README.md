@@ -1,0 +1,1 @@
+# Sistema-de-Controle-de-Telesc-pio-Espacial-Compartilhado-SCTEC-
