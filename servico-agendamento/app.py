@@ -359,9 +359,37 @@ def ver_agendamento(id):
         return erro(404, "Agendamento não encontrado")
     return jsonify(a.to_dict())
 
+@app.delete("/agendamentos/<int:id>")
+def cancelar_agendamento(id):
+    log.info(f"Requisição recebida para DELETE /agendamentos/{id}")
+    a = db.session.get(Agendamento, id)
+    if not a:
+        return erro(404, "Agendamento não encontrado")
+    if a.status == "CANCELADO":
+        return erro(409, "Agendamento já estava cancelado")
 
+    # nao apaga do banco, so muda o status (mantem o historico)
+    a.status = "CANCELADO"
+    db.session.commit()
+
+    log_auditoria("AGENDAMENTO_CANCELADO", {
+        "agendamento_id": a.id,
+        "cientista_id": a.cientista_id,
+        "horario_inicio_utc": iso_curto(a.horario_inicio_utc),
+        "status_anterior": "AGENDADO",
+        "status_novo": "CANCELADO",
+    })
+    # a resposta volta sem o link "cancelar"
+    return jsonify(a.to_dict())
+
+
+@app.get("/web")
+def pagina_web():
+    # pagina do cliente (index.html)
+    return app.send_static_file("index.html")
 def popular_banco():
     # cria um telescópio e alguns cientistas pra facilitar os testes
+    
     if not Telescopio.query.first():
         db.session.add(Telescopio(nome="Hubble-Acad", descricao="Telescópio espacial acadêmico"))
     if not Cientista.query.first():

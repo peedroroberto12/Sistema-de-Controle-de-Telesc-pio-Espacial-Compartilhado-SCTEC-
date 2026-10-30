@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCTEC - Cliente</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 20px; }
+    h1 { margin-top: 0; }
+    .caixa { background: #1e293b; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .relogio { font-size: 28px; font-family: monospace; color: #38bdf8; }
+    .info { font-family: monospace; font-size: 13px; color: #94a3b8; }
+    label { display: block; margin-top: 8px; }
+    input, select { padding: 6px; margin-top: 4px; }
+    button { padding: 8px 14px; margin-top: 10px; cursor: pointer; border: none; border-radius: 4px; background: #38bdf8; color: #0f172a; font-weight: bold; }
+    button.cancelar { background: #f87171; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 6px; border-bottom: 1px solid #334155; }
+    .AGENDADO { color: #4ade80; }
+    .CANCELADO { color: #f87171; }
+    #historico { font-family: monospace; font-size: 13px; max-height: 200px; overflow-y: auto; }
+  </style>
+</head>
+<body>
+  <h1>SCTEC - Agendamento do Telescópio</h1>
+
+  <div class="caixa">
+    <h3>Hora sincronizada com o servidor (UTC)</h3>
+    <div class="relogio" id="relogio">--:--:--</div>
+    <div class="info" id="infoSync">ainda não sincronizado</div>
+    <button onclick="sincronizar()">Sincronizar de novo</button>
+  </div>
+
+  <div class="caixa">
+    <h3>Novo agendamento</h3>
+    <label>Cientista <select id="cientista"></select></label>
+    <label>Telescópio <select id="telescopio"></select></label>
+    <label>Data (UTC) <input type="date" id="data"></label>
+    <label>Horário (UTC, de 5 em 5 min) <input type="time" id="hora" step="300" value="03:00"></label>
+    <label>Objeto celeste <input type="text" id="objeto" value="Andrômeda"></label>
+    <button onclick="agendar()">Agendar</button>
+  </div>
+
+  <div class="caixa">
+    <h3>Agendamentos</h3>
+    <table>
+      <thead><tr><th>ID</th><th>Cientista</th><th>Horário</th><th>Status</th><th>Links recebidos (HATEOAS)</th><th>Ação</th></tr></thead>
+      <tbody id="lista"></tbody>
+    </table>
+  </div>
+
+  <div class="caixa">
+    <h3>Histórico</h3>
+    <div id="historico"></div>
+  </div>
+
+<script>
+  // links descobertos na raiz da API (HATEOAS): o cliente nao monta URL na mao
+  let links = {};
+  // diferenca entre o relogio local e o do servidor, em ms
+  let offset = 0;
+
+  function registrar(msg) {
+    const h = document.getElementById("historico");
+    h.innerHTML = `[${horaSync().toISOString()}] ${msg}<br>` + h.innerHTML;
+  }
+
+  // hora local corrigida pelo offset
+  function horaSync() {
+    return new Date(Date.now() + offset);
+  }
+
+  // Algoritmo de Cristian
+  async function sincronizar() {
+    const t0 = Date.now();                        // antes de pedir
+    const r = await fetch(links.time.href);
+    const t1 = Date.now();                        // quando a resposta chegou
+    const dados = await r.json();
+
+    const horaServidor = Date.parse(dados.timestamp_utc);
+    const rtt = t1 - t0;                          // tempo de ida e volta
+    const horaAjustada = horaServidor + rtt / 2;  // servidor + metade do caminho
+    offset = horaAjustada - t1;
+
+    document.getElementById("infoSync").textContent =
+      `hora do servidor: ${dados.timestamp_utc} | RTT: ${rtt} ms | offset aplicado: ${offset.toFixed(1)} ms`;
+    registrar(`Sincronizado (Cristian): RTT=${rtt} ms, offset=${offset.toFixed(1)} ms`);
+  }
+
+  // relogio na tela usando a hora sincronizada
+  setInterval(() => {
+    document.getElementById("relogio").textContent = horaSync().toISOString().substring(11, 23);
+  }, 50);
+
+  async function carregarSelects() {
+    const cientistas = await (await fetch(links.cientistas.href)).json();
+    document.getElementById("cientista").innerHTML =
+      cientistas.itens.map(c => `<option value="${c.id}">${c.id} - ${c.nome}</option>`).join("");
+
+    const telescopios = await (await fetch(links.telescopios.href)).json();
+    document.getElementById("telescopio").innerHTML =
+      telescopios.itens.map(t => `<option value="${t.id}">${t.nome}</option>`).join("");
+  }
+
+  async function carregarAgendamentos() {
+    const dados = await (await fetch(links.agendamentos.href)).json();
+    const corpo = document.getElementById("lista");
+    corpo.innerHTML = "";
+
+    for (const a of dados.itens) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${a.id}</td>
+        <td>${a.cientista_id}</td>
+        <td>${a.horario_inicio_utc}</td>
+        <td class="${a.status}">${a.status}</td>
+        <td class="info">${Object.keys(a._links).join(", ")}</td>
+        <td></td>`;
+
+      // so mostra o botao se o servidor mandou o link "cancelar"
+      if (a._links.cancelar) {
+        const botao = document.createElement("button");
+        botao.textContent = "Cancelar";
+        botao.className = "cancelar";
+        botao.onclick = () => executarLink(a._links.cancelar, a.id);
+        tr.lastElementChild.appendChild(botao);
+      }
+      corpo.appendChild(tr);
+    }
+  }
+
+  // usa exatamente o href e o method que vieram no link
+  async function executarLink(link, id) {
+    const r = await fetch(link.href, { method: link.method });
+    const dados = await r.json();
+    if (r.ok) {
+      registrar(`Agendamento ${id} cancelado (${link.method} ${link.href}). Links agora: ${Object.keys(dados._links).join(", ")}`);
+    } else {
+      registrar(`Erro ${r.status}: ${dados.erro}`);
+    }
+    carregarAgendamentos();
+  }
+
+  async function agendar() {
+    const data = document.getElementById("data").value;
+    const hora = document.getElementById("hora").value;
+    const corpo = {
+      cientista_id: Number(document.getElementById("cientista").value),
+      telescopio_id: Number(document.getElementById("telescopio").value),
+      horario_inicio_utc: `${data}T${hora}:00Z`,
+      objeto_celeste: document.getElementById("objeto").value,
+      // hora do clique ja corrigida pelo Cristian
+      timestamp_requisicao: horaSync().toISOString(),
+    };
+
+    const r = await fetch(links.criar_agendamento.href, {
+      method: links.criar_agendamento.method,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(corpo),
+    });
+    const dados = await r.json();
+    if (r.status === 201) {
+      registrar(`Agendamento ${dados.id} criado para ${dados.horario_inicio_utc} (clique em ${corpo.timestamp_requisicao})`);
+    } else {
+      registrar(`Erro ${r.status}: ${dados.erro}`);
+    }
+    carregarAgendamentos();
+  }
+
+  async function iniciar() {
+    // data padrao: amanha
+    const amanha = new Date(Date.now() + 86400000);
+    document.getElementById("data").value = amanha.toISOString().substring(0, 10);
+
+    // ponto de entrada: pega os links da raiz
+    links = (await (await fetch("/")).json())._links;
+    await sincronizar();
+    await carregarSelects();
+    await carregarAgendamentos();
+  }
+
+  iniciar();
+</script>
+</body>
+</html>

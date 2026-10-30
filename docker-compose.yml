@@ -1,0 +1,14 @@
+services:
+  servico-coordenador:
+    build: ./servico-coordenador
+    ports:
+      - "3000:3000"
+
+  servico-agendamento:
+    build: ./servico-agendamento
+    ports:
+      - "5000:5000"
+    environment:
+      - COORDENADOR_URL=http://servico-coordenador:3000
+    depends_on:
+      - servico-coordenador
